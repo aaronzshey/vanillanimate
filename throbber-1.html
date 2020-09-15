@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<style>
+*{
+margin: 0;
+}
+body{
+display: flex;
+align-items: center;
+justify-content: center;
+
+}
+#wiggle-container {
+ width: 200px;
+ height: 200px;
+ border: 1px solid black;
+ margin-top: 50vh;
+ position: absolute;
+ display: flex;
+   align-items: center;
+justify-content: center;
+}
+
+#wiggle{
+ width: 30px;
+ height: 20px;
+margin: 5px;
+border-radius: 20px;
+animation: wiggle linear 2s infinite;
+background-color: thistle;
+}
+
+@keyframes wiggle {
+20% {height: 100px;}
+50% {height: 150px;}
+80%{ height: 100px;}
+}
+
+#wiggle.second{
+animation-delay: 0.25s;
+}
+
+#wiggle.third {
+animation-delay: 0.5s;
+}
+
+</style>
+<body>
+
+<div id="wiggle-container">
+<div id="wiggle" class="first"></div>
+<div id="wiggle" class="second"></div>
+<div id="wiggle" class="third"></div>
+
+</div>
+
+
+</body>
+</html>
