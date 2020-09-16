@@ -10,15 +10,15 @@ margin: 0;
 body{
 display: flex;
 align-items: center;
-justify-content: center;
+justify-content: center; 
 
-}
+} /* justify everything in the middle*/
 #wiggle-container {
  width: 200px;
  height: 200px;
  border: 1px solid black;
  margin-top: 50vh;
- position: absolute;
+ position: absolute; /* make the margin top calculations start from the middle of the elem */
  display: flex;
    align-items: center;
 justify-content: center;
@@ -35,9 +35,9 @@ background-color: thistle;
 
 @keyframes wiggle {
 20% {height: 100px;}
-50% {height: 150px;}
-80%{ height: 100px;}
-}
+50% {height: 150px;}/* small amount of straining at this point */
+80%{ height: 100px;} 
+} /* dev tools indicates repeated function calls layered with paints = culprit? */
 
 #wiggle.second{
 animation-delay: 0.25s;
