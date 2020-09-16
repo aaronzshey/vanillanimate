@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<style>
+
+#container {
+	display: flex;
+}
+
+h1 {
+	font-family: Helvetica;
+	position: fixed;
+}
+
+
+span.attention-getter{
+	height: 0px; /*invisible*/
+    width: 10px;
+    background-color: #ce2029;
+    display: inline-block;
+    transition: 0.25s linear
+}
+
+#container:hover span.attention-getter {
+height: 30px;
+}
+ /* get hover action from the #container and change span.attention-getter */
+</style>
+</head>
+<body>
+
+<div id="container">
+<h1>Title
+<span class="attention-getter">
+</span> 
+</h1>
+
+</div>
+
+</body>
+</html>
