@@ -2,40 +2,70 @@
 <html>
 <head>
 <title>Page Title</title>
+</head>
 <style>
 
-#container {
-	display: flex;
+body{
+display: flex;
+justify-content: center;
+align-items: center;
+background-color: peru;
 }
 
-h1 {
-	font-family: Helvetica;
-	position: fixed;
+#container{
+height: 300px;
+width: 100vh;
+margin-top: 50vh;
+position: absolute;
+/* border: 1px solid black ; */
+display: flex;
+justify-content: center;
+align-items: center;
 }
 
-
-span.attention-getter{
-	height: 0px; /*invisible*/
-    width: 10px;
-    background-color: #ce2029;
-    display: inline-block;
-    transition: 0.25s linear
+#expand {
+width: 80px;
+height: 80px;
+background-color: papayawhip;
+border-radius: 50%;
+margin: 20px;
+transition: 0.5s;
 }
 
-#container:hover span.attention-getter {
-height: 30px;
+#expand:hover {
+border-radius: 0%;
+background-color: lightseagreen;
+transition: 0.5s;
+} /* this hover animation is stupid lol */
+
+@keyframes breathe {
+25% {transform:scale(1,1);}
+50% {transform:scale(1.25,1.25);}
+75% {transform:scale(1,1);}
 }
- /* get hover action from the #container and change span.attention-getter */
+
+.one {
+	animation: breathe linear 1.5s infinite; 
+    
+}
+
+.two {
+	animation: breathe linear 1.5s infinite; 
+    animation-delay: 0.5s;
+}
+
+.three {
+	animation: breathe linear 1.5s infinite; 
+    animation-delay: 1s;
+}
+
 </style>
-</head>
 <body>
 
 <div id="container">
-<h1>Title
-<span class="attention-getter">
-</span> 
-</h1>
-
+<div id="expand" class="one"></div>
+<div id="expand" class="two"></div>
+<div id="expand" class="three"></div>
 </div>
 
 </body>
