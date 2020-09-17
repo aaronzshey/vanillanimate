@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+
+div#blink {
+  width: 100px;
+  height: 100px;
+  background-color: peru;
+  position: relative;
+  animation: example infinite;
+  animation-duration: 1s;
+}
+
+@keyframes example {
+  50% {background-color:tomato;}
+}
+</style>
+</head>
+<body>
+
+
+<div id="blink"></div>
+<p id="time">asdf</p>
+
+</body>
+<script>
+var tar = document.getElementById("blink")
+var sec = document.getElementById("time");
+function blink() {
+var dur = Math.random() * 2.5
+tar.style.animationDuration = dur;
+sec.innerText = dur
+console.log("fired")
+}
+
+tar.addEventListener("animationiteration", blink) //blink() makes it only run once - why?
+
+/*. 
+*/
+</script>
+</html>
