@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,12 +9,12 @@ div#blink {
   height: 100px;
   background-color: peru;
   position: relative;
-  animation: example infinite;
+  animation: flash infinite;
   animation-duration: 1s;
 }
 
-@keyframes example {
-  50% {background-color:tomato;}
+@keyframes flash {
+  50% {background:none;}
 }
 </style>
 </head>
@@ -21,22 +22,22 @@ div#blink {
 
 
 <div id="blink"></div>
-<p id="time">asdf</p>
+<p id="time"></p>
 
 </body>
 <script>
+
 var tar = document.getElementById("blink")
 var sec = document.getElementById("time");
 function blink() {
-var dur = Math.random() * 2.5
-tar.style.animationDuration = dur;
+var dur = Math.random() * 2.5 + 1
+tar.style.animationDuration = `${dur}s`;
 sec.innerText = dur
 console.log("fired")
 }
 
-tar.addEventListener("animationiteration", blink) //blink() makes it only run once - why?
-
-/*. 
+tar.addEventListener("animationiteration", blink) 
+/* 
 */
 </script>
 </html>
