@@ -1,72 +1,73 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Page Title</title>
-</head>
-<style>
+  <head>
+    <title>Page Title</title>
+  </head>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: peru;
+    }
 
-body{
-display: flex;
-justify-content: center;
-align-items: center;
-background-color: peru;
-}
+    .container {
+      height: 300px;
+      width: 100vh;
+      margin-top: 50vh;
+      position: absolute;
+      /* border: 1px solid black ; */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-#container{
-height: 300px;
-width: 100vh;
-margin-top: 50vh;
-position: absolute;
-/* border: 1px solid black ; */
-display: flex;
-justify-content: center;
-align-items: center;
-}
+    .expand {
+      width: 80px;
+      height: 80px;
+      background-color: papayawhip;
+      border-radius: 50%;
+      margin: 20px;
+      transition: 0.5s;
+    }
 
-#expand {
-width: 80px;
-height: 80px;
-background-color: papayawhip;
-border-radius: 50%;
-margin: 20px;
-transition: 0.5s;
-}
+    .expand:hover {
+      border-radius: 5px;
+      background-color: lightseagreen;
+      transition: 0.5s;
+    } /* this hover animation is stupid lol */
 
-#expand:hover {
-border-radius: 0%;
-background-color: lightseagreen;
-transition: 0.5s;
-} /* this hover animation is stupid lol */
+    @keyframes breathe {
+      25% {
+        transform: scale(1, 1);
+      }
+      50% {
+        transform: scale(1.25, 1.25);
+      }
+      75% {
+        transform: scale(1, 1);
+      }
+    }
 
-@keyframes breathe {
-25% {transform:scale(1,1);}
-50% {transform:scale(1.25,1.25);}
-75% {transform:scale(1,1);}
-}
+    .one {
+      animation: breathe linear 1.5s infinite;
+    }
 
-.one {
-	animation: breathe linear 1.5s infinite; 
-    
-}
+    .two {
+      animation: breathe linear 1.5s infinite;
+      animation-delay: 0.5s;
+    }
 
-.two {
-	animation: breathe linear 1.5s infinite; 
-    animation-delay: 0.5s;
-}
-
-.three {
-	animation: breathe linear 1.5s infinite; 
-    animation-delay: 1s;
-}
-
-</style>
-<body>
-
-<div id="container">
-<div id="expand" class="one"></div>
-<div id="expand" class="two"></div>
-<div id="expand" class="three"></div>
-</div>
-
-</body>
+    .three {
+      animation: breathe linear 1.5s infinite;
+      animation-delay: 1s;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="expand one"></div>
+      <div class="expand two"></div>
+      <div class="expand three" ></div>
+    </div>
+  </body>
 </html>

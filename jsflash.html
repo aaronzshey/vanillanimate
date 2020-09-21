@@ -1,43 +1,39 @@
-
 <!DOCTYPE html>
 <html>
-<head>
-<style> 
+  <head>
+    <style>
+      div.blink {
+        width: 100px;
+        height: 100px;
+        background-color: peru;
+        position: relative;
+        animation: flash infinite;
+        animation-duration: 1s;
+      }
 
-div#blink {
-  width: 100px;
-  height: 100px;
-  background-color: peru;
-  position: relative;
-  animation: flash infinite;
-  animation-duration: 1s;
-}
+      @keyframes flash {
+        50% {
+          background: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="blink"></div>
+    <p class="time"></p>
+  </body>
+  <script>
+    var tar = document.querySelector(".blink");
+    var sec = document.querySelector(".time");
+    function blink() {
+      var dur = Math.random() * 2.5 + 1;
+      tar.style.animationDuration = `${dur}s`;
+      sec.innerText = dur;
+      console.log("fired");
+    }
 
-@keyframes flash {
-  50% {background:none;}
-}
-</style>
-</head>
-<body>
-
-
-<div id="blink"></div>
-<p id="time"></p>
-
-</body>
-<script>
-
-var tar = document.getElementById("blink")
-var sec = document.getElementById("time");
-function blink() {
-var dur = Math.random() * 2.5 + 1
-tar.style.animationDuration = `${dur}s`;
-sec.innerText = dur
-console.log("fired")
-}
-
-tar.addEventListener("animationiteration", blink) 
-/* 
-*/
-</script>
+    tar.addEventListener("animationiteration", blink);
+    /*
+     */
+  </script>
 </html>

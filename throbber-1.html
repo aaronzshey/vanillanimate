@@ -1,62 +1,62 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Page Title</title>
-</head>
-<style>
-*{
-margin: 0;
-}
-body{
-display: flex;
-align-items: center;
-justify-content: center; 
+  <head>
+    <title>Page Title</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+    }
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    } /* justify everything in the mclassdle*/
+    .wiggle-container {
+      wclassth: 200px;
+      height: 200px;
+      border: 1px solclass black;
+      margin-top: 50vh;
+      position: absolute; /* make the margin top calculations start from the mclassdle of the elem */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-} /* justify everything in the middle*/
-#wiggle-container {
- width: 200px;
- height: 200px;
- border: 1px solid black;
- margin-top: 50vh;
- position: absolute; /* make the margin top calculations start from the middle of the elem */
- display: flex;
-   align-items: center;
-justify-content: center;
-}
+    .wiggle {
+      width: 30px;
+      height: 20px;
+      margin: 5px;
+      border-radius: 20px;
+      animation: wiggle linear 2s infinite;
+      background-color: thistle;
+    }
 
-#wiggle{
- width: 30px;
- height: 20px;
-margin: 5px;
-border-radius: 20px;
-animation: wiggle linear 2s infinite;
-background-color: thistle;
-}
+    @keyframes wiggle {
+      20% {
+        height: 100px;
+      }
+      50% {
+        height: 150px;
+      } /* small amount of straining at this point */
+      80% {
+        height: 100px;
+      }
+    } /* dev tools indicates repeated function calls layered with paints = culprit? */
 
-@keyframes wiggle {
-20% {height: 100px;}
-50% {height: 150px;}/* small amount of straining at this point */
-80%{ height: 100px;} 
-} /* dev tools indicates repeated function calls layered with paints = culprit? */
+    .wiggle.second {
+      animation-delay: 0.25s;
+    }
 
-#wiggle.second{
-animation-delay: 0.25s;
-}
-
-#wiggle.third {
-animation-delay: 0.5s;
-}
-
-</style>
-<body>
-
-<div id="wiggle-container">
-<div id="wiggle" class="first"></div>
-<div id="wiggle" class="second"></div>
-<div id="wiggle" class="third"></div>
-
-</div>
-
-
-</body>
+    .wiggle.third {
+      animation-delay: 0.5s;
+    }
+  </style>
+  <body>
+    <div class="wiggle-container">
+      <div class="wiggle first"></div>
+      <div class="wiggle second"></div>
+      <div class="wiggle third"></div>
+    </div>
+  </body>
 </html>

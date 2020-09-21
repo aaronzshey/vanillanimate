@@ -11,35 +11,35 @@
       font-size: 100px;
     }
 
-    #purple {
+    .purple {
       color: #752bf9;
       text-shadow: 5px 5px 20px #8475fb, 5px 5px 30px #a575fb;
       animation: flicker alternate infinite;
       animation-duration: 1s;
     }
 
-    #pink {
+    .pink {
       color: #ef159a;
       text-shadow: 5px 5px 20px #f45ddf, 5px 5px 30px#f45db9;
       animation: flicker alternate infinite;
       animation-duration: 1s;
     }
 
-    #green {
+    .green {
       color: #31d941;
       text-shadow: 5px 5px 20px #84e572, 5px 5px 30px #72e57d;
       animation: flicker alternate infinite;
       animation-duration: 1s;
     }
 
-    #red {
+    .red {
       color: #ff3333;
       text-shadow: 5px 5px 20px #ff1a53, 5px 5px 30px #ff1a2d;
       animation: flicker alternate infinite;
       animation-duration: 1s;
     }
 
-    #darkgreen {
+    .darkgreen {
       color: #00b300;
       text-shadow: 5px 5px 20px #2db300, 5px 5px 30px #1eb300;
       animation: flicker alternate infinite;
@@ -62,18 +62,18 @@
     }
   </style>
   <body>
-    <span id="purple">A</span>
-    <span id="pink">B</span>
-    <span id="green">C</span>
-    <span id="red">D</span>
-    <span id="darkgreen">E</span>
+    <span class="purple">A</span>
+    <span class="pink">B</span>
+    <span class="green">C</span>
+    <span class="red">D</span>
+    <span class="darkgreen">E</span>
 
     <script>
-      var purple = document.getElementById("purple");
-      var pink = document.getElementById("pink");
-      var green = document.getElementById("green");
-      var red = document.getElementById("red");
-      var darkgreen = document.getElementById("darkgreen");
+      var purple = document.querySelector(".purple");
+      var pink = document.querySelector(".pink");
+      var green = document.querySelector(".green");
+      var red = document.querySelector(".red");
+      var darkgreen = document.querySelector(".darkgreen");
 
       function blinkpurple() {
         var dur = Math.random() * 2.5 + 1;

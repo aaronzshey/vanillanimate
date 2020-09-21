@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+body {
+background-color: lightgrey;
+
+}
+input[type=text] {
+  width: 75%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 5px;
+background: #ffffff;
+box-shadow: inset 2px 2px 6px #d9d9d9, 
+            inset -2px -2px 6px #ffffff;
+            border: 1px solid rgb(0,0,0,0);
+            outline: none;
+            transition: 0.5s
+
+}
+input[type=text]:focus {
+border: 1px solid #00ff7b;
+transition: 0.5s
+}
+
+textarea {
+  width: 75%;
+  height: 75vh;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 5px;
+    resize: none;
+box-shadow: inset 2px 2px 6px #d9d9d9, 
+            inset -2px -2px 6px #ffffff;
+            border: 1px solid white;
+            outline: none;
+
+}
+
+</style>
+</head>
+<body>
+
+
+<form>
+  <input type="text" id="fname" name="fname" placeholder="Title">
+  <textarea>
+  </textarea>
+</form>
+
+</body>
+</html>
