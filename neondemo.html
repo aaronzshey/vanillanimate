@@ -11,42 +11,45 @@
       font-size: 100px;
     }
 
+    .neon {
+      animation: blink 1s infinite
+    }
     .purple {
       color: #752bf9;
       text-shadow: 5px 5px 20px #8475fb, 5px 5px 30px #a575fb;
-      animation: flicker alternate infinite;
       animation-duration: 1s;
     }
 
     .pink {
       color: #ef159a;
       text-shadow: 5px 5px 20px #f45ddf, 5px 5px 30px#f45db9;
-      animation: flicker alternate infinite;
       animation-duration: 1s;
     }
 
     .green {
       color: #31d941;
       text-shadow: 5px 5px 20px #84e572, 5px 5px 30px #72e57d;
-      animation: flicker alternate infinite;
       animation-duration: 1s;
     }
 
     .red {
       color: #ff3333;
       text-shadow: 5px 5px 20px #ff1a53, 5px 5px 30px #ff1a2d;
-      animation: flicker alternate infinite;
       animation-duration: 1s;
     }
 
     .darkgreen {
       color: #00b300;
       text-shadow: 5px 5px 20px #2db300, 5px 5px 30px #1eb300;
-      animation: flicker alternate infinite;
       animation-duration: 1s;
     }
 
-    @keyframes flicker {
+    .orange {
+      color: #fedf5f;
+      text-shadow: 5px 5px 20px #f52e30, 5px 5px 30px #f52e30 ;
+    }
+
+    @keyframes blink {
       30% {
         opacity: 0.8;
       }
@@ -62,48 +65,27 @@
     }
   </style>
   <body>
-    <span class="purple">A</span>
-    <span class="pink">B</span>
-    <span class="green">C</span>
-    <span class="red">D</span>
-    <span class="darkgreen">E</span>
+    <span class="purple neon">A</span>
+    <span class="pink neon">B</span>
+    <span class="green neon">C</span>
+    <span class="red neon">D</span>
+    <span class="darkgreen neon">E</span>
+    <span class="orange neon">F</span>
 
     <script>
-      var purple = document.querySelector(".purple");
-      var pink = document.querySelector(".pink");
-      var green = document.querySelector(".green");
-      var red = document.querySelector(".red");
-      var darkgreen = document.querySelector(".darkgreen");
 
-      function blinkpurple() {
-        var dur = Math.random() * 2.5 + 1;
-        purple.style.animationDuration = `${dur}s`;
-      }
+    const arr = document.getElementsByClassName("neon")
 
-      function blinkpink() {
-        var dur = Math.random() * 2.5 + 3;
-        pink.style.animationDuration = `${dur}s`;
-      }
-      function blinkgreen() {
-        var dur = Math.random() * 2.5 + 3;
-        green.style.animationDuration = `${dur}s`;
-      }
+    function flicker(event) {
+      var dur = Math.random() * 2.5 + 3;
+      event.target.style.animationDuration = `${dur}s`
+    }
 
-      function blinkred() {
-        var dur = Math.random() * 2.5 + 3;
-        red.style.animationDuration = `${dur}s`;
-      }
+    for (var i = 0; i < arr.length; i++) {
+      arr[i].addEventListener("animationiteration", flicker)
+    }
 
-      function blinkdarkgreen() {
-        var dur = Math.random() * 2.5 + 3;
-        darkgreen.style.animationDuration = `${dur}s`;
-      }
 
-      purple.addEventListener("animationiteration", blinkpurple);
-      pink.addEventListener("animationiteration", blinkpink);
-      green.addEventListener("animationiteration", blinkgreen);
-      red.addEventListener("animationiteration", blinkred);
-      darkgreen.addEventListener("animationiteration", blinkdarkgreen);
     </script>
   </body>
 </html>
