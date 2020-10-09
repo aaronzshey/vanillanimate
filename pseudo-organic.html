@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Page Title</title>
+    <style>
+      body {
+        background: grey;
+      }
+      .container {
+        border: 1px solid black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 25vh;
+        position: absolute;
+        margin-left: 25vw;
+      }
+
+      .first {
+        width: 220px;
+        height: 220px;
+        border-radius: 45%;
+        background: rgba(0, 191, 255, 0.6);
+        position: absolute;
+        z-index: -3;
+        transform: rotate(90deg);
+      }
+
+      .second {
+        width: 280px;
+        height: 300px;
+        border-radius: 40%;
+        background: rgba(32, 178, 170, 0.5);
+        position: absolute;
+        z-index: -2;
+        transform: rotate(-45deg);
+        animation: counterclockwise 20s infinite linear;
+      }
+
+      .third {
+        width: 310px;
+        height: 330px;
+        background: rgba(0, 191, 255, 0.2);
+        border-radius: 40%;
+        z-index: -1;
+        transform: rotate(90deg);
+        animation: clockwise 20s infinite linear;
+      }
+
+      .fourth {
+        width: 350px;
+        height: 335px;
+        z-index: -1;
+        position: absolute;
+        background: rgba(255, 165, 0, 0.2);
+        border-radius: 45%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 100px;
+      }
+
+      @keyframes clockwise {
+        0% {
+          transform: rotate(90deg);
+        }
+        50% {
+          transform: rotate(360deg);
+        }
+        100% {
+          transform: rotate(90deg);
+        }
+      }
+
+      @keyframes counterclockwise {
+        0% {
+          transform: rotate(-45deg);
+        }
+        50% {
+          transform: rotate(-360deg);
+        }
+        100% {
+          transform: rotate(-45deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="first"></div>
+      <div class="second"></div>
+      <div class="third"></div>
+      <div class="fourth">☁️</div>
+    </div>
+  </body>
+</html>
